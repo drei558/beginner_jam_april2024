@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://c586ofth4re5x"]
 
-[ext_resource type="PackedScene" uid="uid://bpei8nghyi1b8" path="res://Scenes/Character scenes/player.tscn" id="1_hy6lv"]
+[ext_resource type="PackedScene" uid="uid://bpei8nghyi1b8" path="res://Scenes/character/player.tscn" id="1_hy6lv"]
 [ext_resource type="Texture2D" uid="uid://cpadix1x714ns" path="res://Art/SpriteSheets/Solaria Demo Tiles.png" id="2_3snkm"]
 [ext_resource type="Texture2D" uid="uid://cub00de13rxkj" path="res://Art/SpriteSheets/woodfloor.png" id="2_4h80n"]
 [ext_resource type="Texture2D" uid="uid://b74mv4oejln3o" path="res://Art/SpriteSheets/Wooden House.png" id="3_qpn2w"]
@@ -1358,6 +1358,7 @@ sources/3 = SubResource("TileSetAtlasSource_v7kdt")
 [node name="World1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(6, 9)
 tile_set = SubResource("TileSet_j5nkg")
 format = 2
 layer_0/name = "Floor"
