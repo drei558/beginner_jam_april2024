@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpei8nghyi1b8"]
+
+[ext_resource type="Script" path="res://Scripts/CharacterScripts/player.gd" id="1_1jnfx"]
+[ext_resource type="Texture2D" uid="uid://dnbkr76kiv7v6" path="res://Art/Other/bgjam_characterV3.png" id="2_5nk8o"]
+[ext_resource type="Texture2D" uid="uid://d2f0740t26aav" path="res://Art/Other/prop_fade_start_50.png" id="3_5sori"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yrmx8"]
+radius = 6.0
+height = 18.0
+
+[sub_resource type="Animation" id="Animation_l63yx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_kcy8t"]
+resource_name = "Walking"
+length = 0.30001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3w3ib"]
+_data = {
+"RESET": SubResource("Animation_l63yx"),
+"Walking": SubResource("Animation_kcy8t")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_1jnfx")
+speed = 100
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5nk8o")
+hframes = 5
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_yrmx8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3w3ib")
+}
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(97, 3)
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("3_5sori")
