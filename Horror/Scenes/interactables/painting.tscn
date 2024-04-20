@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://rgpuvqbo2mtm"]
+
+[ext_resource type="Script" path="res://Scripts/interactables/bed.gd" id="1_enud7"]
+[ext_resource type="Texture2D" uid="uid://vp3hdjxrq7kb" path="res://Art/Objects/picture.png" id="2_gkwj7"]
+[ext_resource type="PackedScene" uid="uid://iwcdosbkneof" path="res://Scenes/systems/interaction/interaction_area/interaction_area.tscn" id="2_xr1n6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82oap"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ja3o5"]
+
+[node name="Painting" type="Area2D" node_paths=PackedStringArray("interaction_area", "sprite")]
+script = ExtResource("1_enud7")
+interaction_area = NodePath("InteractionArea")
+sprite = NodePath("Sprite2D")
+interaction_text = Array[String](["This painting looks beautiful!"])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_gkwj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_82oap")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_xr1n6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_ja3o5")

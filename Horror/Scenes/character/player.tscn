@@ -47,6 +47,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_1jnfx")
 speed = 100
@@ -65,6 +66,7 @@ libraries = {
 }
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(97, 3)
 energy = 0.5
 shadow_enabled = true
