@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bof4j8nswmcsi"]
+
+[ext_resource type="Script" path="res://Scripts/interactables/bed.gd" id="1_tvl3w"]
+[ext_resource type="Texture2D" uid="uid://qgv31owgadh6" path="res://Art/SpriteSheets/Basic_Furniture.png" id="2_11snu"]
+[ext_resource type="PackedScene" uid="uid://iwcdosbkneof" path="res://Scenes/systems/interaction/interaction_area/interaction_area.tscn" id="3_3hv25"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xh4db"]
+size = Vector2(16, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8rld"]
+size = Vector2(30, 36)
+
+[node name="Bed" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_tvl3w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_11snu")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_xh4db")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_3hv25")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_c8rld")
+debug_color = Color(0.745098, 0.4, 0.619608, 0.419608)
