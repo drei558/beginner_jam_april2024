@@ -10,9 +10,11 @@ size = Vector2(16, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8rld"]
 size = Vector2(30, 36)
 
-[node name="Bed" type="Area2D"]
+[node name="Bed" type="Area2D" node_paths=PackedStringArray("interaction_area", "sprite")]
 collision_mask = 2
 script = ExtResource("1_tvl3w")
+interaction_area = NodePath("InteractionArea")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_11snu")
