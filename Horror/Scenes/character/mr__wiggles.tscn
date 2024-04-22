@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://depend6o2auw6"]
+
+[ext_resource type="Texture2D" uid="uid://cmqca13h7xmi3" path="res://Art/Other/mrwiggles.png" id="1_pb7n4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_luunr"]
+radius = 4.0
+height = 10.0
+
+[node name="Mr_ Wiggles" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pb7n4")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_luunr")

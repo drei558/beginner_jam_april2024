@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Horror"
-run/main_scene="res://Scenes/world/world_1.tscn"
+run/main_scene="res://Scenes/world/cutscene_1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Art/Other/icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://Art/Other/icon.svg"
 
 InteractionManager="*res://Scenes/systems/interaction/interaction_manager.tscn"
 DialogManager="*res://Scripts/systems/dialog/dialog_manager.gd"
+Global="*res://Scripts/systems/Global.gd"
 
 [display]
 
@@ -71,3 +72,5 @@ Advance_Dialog={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://cyy28funjnhom"]
+[gd_scene load_steps=14 format=3 uid="uid://cyy28funjnhom"]
 
-[ext_resource type="Texture2D" uid="uid://mtu1ppfqgb7j" path="res://Art/SpriteSheets/Tiles communautaire pour post apo3.png" id="1_eb4h1"]
-[ext_resource type="Script" path="res://Scripts/ui/abandoned_house.gd" id="1_xjet0"]
-[ext_resource type="Texture2D" uid="uid://cub00de13rxkj" path="res://Art/SpriteSheets/woodfloor.png" id="2_op62a"]
-[ext_resource type="PackedScene" uid="uid://bpei8nghyi1b8" path="res://Scenes/character/player.tscn" id="3_fo12f"]
-[ext_resource type="PackedScene" uid="uid://dri15edn60teg" path="res://Scenes/interactables/note.tscn" id="4_1xk58"]
-[ext_resource type="Texture2D" uid="uid://bwaq8hkg34n5p" path="res://Art/Other/Blank.png" id="5_1wh5w"]
-[ext_resource type="Texture2D" uid="uid://d2f0740t26aav" path="res://Art/Other/prop_fade_start_50.png" id="6_1xepj"]
+[ext_resource type="Script" path="res://Scripts/ui/abandoned_house.gd" id="1_1el8y"]
+[ext_resource type="Texture2D" uid="uid://mtu1ppfqgb7j" path="res://Art/SpriteSheets/Tiles communautaire pour post apo3.png" id="2_dvmnu"]
+[ext_resource type="Texture2D" uid="uid://cub00de13rxkj" path="res://Art/SpriteSheets/woodfloor.png" id="3_wiu30"]
+[ext_resource type="PackedScene" uid="uid://dri15edn60teg" path="res://Scenes/interactables/note.tscn" id="4_2tgiq"]
+[ext_resource type="PackedScene" uid="uid://bpei8nghyi1b8" path="res://Scenes/character/player.tscn" id="5_8do6s"]
+[ext_resource type="Texture2D" uid="uid://d2f0740t26aav" path="res://Art/Other/prop_fade_start_50.png" id="6_oepol"]
+[ext_resource type="Texture2D" uid="uid://bwaq8hkg34n5p" path="res://Art/Other/Blank.png" id="7_5ito4"]
+[ext_resource type="FontFile" uid="uid://dy52da7cnwei5" path="res://HorrorFont-Regular.ttf" id="8_v5l6w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7uka"]
-texture = ExtResource("1_eb4h1")
+texture = ExtResource("2_dvmnu")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1817,7 +1818,7 @@ texture = ExtResource("1_eb4h1")
 47:47/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bu4oq"]
-texture = ExtResource("2_op62a")
+texture = ExtResource("3_wiu30")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1831,10 +1832,11 @@ a = Vector2(22, 2)
 b = Vector2(22, 142)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0qdi6"]
+font = ExtResource("8_v5l6w")
 font_size = 40
 
 [node name="Abandoned_House" type="Node2D"]
-script = ExtResource("1_xjet0")
+script = ExtResource("1_1el8y")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_i0yeu")
@@ -1844,10 +1846,10 @@ layer_0/tile_data = PackedInt32Array(-2, 131075, 0, 65534, 131075, 0, 131070, 13
 layer_1/name = "Second"
 layer_1/tile_data = PackedInt32Array(1, 589826, 21, 65537, 589826, 22, 131073, 589826, 23, 196609, 589826, 24, 262145, 589826, 25, 327681, 589826, 26, 393217, 589826, 27, 458753, 589826, 28, 524289, 589826, 29, 2, 655362, 21, 65538, 655362, 22, 131074, 655362, 23, 196610, 655362, 24, 262146, 655362, 25, 327682, 655362, 26, 393218, 655362, 27, 458754, 655362, 28, 524290, 655362, 29, 3, 720898, 21, 65539, 720898, 22, 131075, 720898, 23, 196611, 720898, 24, 262147, 720898, 25, 327683, 720898, 26, 393219, 720898, 27, 458755, 720898, 28, 524291, 720898, 29, 4, 786434, 21, 65540, 786434, 22, 131076, 786434, 23, 196612, 786434, 24, 262148, 786434, 25, 327684, 786434, 26, 393220, 786434, 27, 458756, 786434, 28, 524292, 786434, 29, 5, 851970, 21, 65541, 851970, 22, 131077, 851970, 23, 196613, 851970, 24, 262149, 851970, 25, 327685, 851970, 26, 393221, 851970, 27, 458757, 851970, 28, 524293, 851970, 29, 196614, 917506, 24, 262150, 917506, 25, 327686, 917506, 26, 393222, 917506, 27, 458758, 917506, 28, 524294, 917506, 29, 196615, 983042, 24, 262151, 983042, 25, 327687, 983042, 26, 393223, 983042, 27, 458759, 983042, 28, 524295, 983042, 29, 196616, 1048578, 24, 262152, 1048578, 25, 327688, 1048578, 26, 393224, 1048578, 27, 458760, 1048578, 28, 524296, 1048578, 29, 9, 1114114, 21, 65545, 1114114, 22, 131081, 1114114, 23, 196617, 1114114, 24, 262153, 1114114, 25, 327689, 1114114, 26, 393225, 1114114, 27, 458761, 1114114, 28, 524297, 1114114, 29, 6, 917506, 21, 65542, 917506, 22, 131078, 917506, 23, 7, 983042, 21, 65543, 983042, 22, 131079, 983042, 23, 8, 1048578, 21, 65544, 1048578, 22, 131080, 1048578, 23)
 
-[node name="Note" parent="." instance=ExtResource("4_1xk58")]
+[node name="Note" parent="." instance=ExtResource("4_2tgiq")]
 position = Vector2(84, 25)
 
-[node name="Player" parent="." instance=ExtResource("3_fo12f")]
+[node name="Player" parent="." instance=ExtResource("5_8do6s")]
 position = Vector2(86, 104)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -1856,7 +1858,7 @@ zoom = Vector2(5, 5)
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
 position = Vector2(97, 2)
 energy = 0.5
-texture = ExtResource("6_1xepj")
+texture = ExtResource("6_oepol")
 
 [node name="Invisible walls" type="Node2D" parent="."]
 
@@ -1915,7 +1917,7 @@ grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel"]
 scale = Vector2(35, 35)
-texture = ExtResource("5_1wh5w")
+texture = ExtResource("7_5ito4")
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
 modulate = Color(0, 0, 0, 1)
